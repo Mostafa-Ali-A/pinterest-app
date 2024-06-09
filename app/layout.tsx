@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
+import Provider from './Provider';
 
 const roboto = Roboto({
-	weight: ['400', '700'],
+	weight: ['400'],
 	subsets: ['latin'],
+	display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -24,8 +26,10 @@ export default function RootLayout({
 			<body
 				className={`${roboto.className}
 				antialiased`}>
-				<Header />
-				{children}
+				<Provider>
+					<Header />
+					{children}
+				</Provider>
 			</body>
 		</html>
 	);
