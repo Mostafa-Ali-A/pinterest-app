@@ -78,7 +78,7 @@ export default function Header() {
 								<Image
 									className='rounded-full'
 									alt='User Profile'
-									src={JSON.parse(session?.user?.image as string)}
+									src={session?.user?.image}
 									width={32}
 									height={32}
 								/>
@@ -184,7 +184,7 @@ export default function Header() {
 							<Image
 								className='rounded-full m-auto'
 								alt='User Profile'
-								src={JSON.parse(session?.user?.image as string)}
+								src={session?.user?.image}
 								width={32}
 								height={32}
 							/>
@@ -221,7 +221,7 @@ export default function Header() {
 					</button>
 					<section
 						id='dropdown'
-						className='hidden fixed right-12 top-3 bg-white rounded-md min-w-[342px] h-32 text-center max-[493px]:hidden border-2'>
+						className='hidden fixed right-12 top-3 bg-white rounded-md w-[342px] h-32 text-center max-[493px]:hidden border-2'>
 						{session ? (
 							<>
 								<p className='pt-2'>Signed in as</p>
