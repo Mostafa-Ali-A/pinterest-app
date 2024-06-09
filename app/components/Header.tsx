@@ -78,9 +78,9 @@ export default function Header() {
 								<Image
 									className='rounded-full'
 									alt='User Profile'
-									src={session?.user?.image as string}
-									width={30}
-									height={30}
+									src={JSON.parse(session?.user?.image as string)}
+									width={32}
+									height={32}
 								/>
 							</div>
 							<div className='flex-col'>
@@ -106,8 +106,8 @@ export default function Header() {
 									className='rounded-full'
 									alt='User Profile'
 									src={anonymous}
-									width={30}
-									height={30}
+									width={32}
+									height={32}
 								/>
 							</div>
 							<div className='flex-col'>
@@ -184,9 +184,9 @@ export default function Header() {
 							<Image
 								className='rounded-full m-auto'
 								alt='User Profile'
-								src={session?.user?.image as string}
-								width={30}
-								height={30}
+								src={JSON.parse(session?.user?.image as string)}
+								width={32}
+								height={32}
 							/>
 						</button>
 					) : (
@@ -197,8 +197,8 @@ export default function Header() {
 								className='rounded-full m-auto'
 								alt='User Profile'
 								src={anonymous}
-								width={30}
-								height={30}
+								width={32}
+								height={32}
 							/>
 						</button>
 					)}
@@ -221,10 +221,12 @@ export default function Header() {
 					</button>
 					<section
 						id='dropdown'
-						className='hidden fixed right-12 top-3 bg-white rounded-md w-[342px] h-32 text-center max-[493px]:hidden'>
+						className='hidden fixed right-12 top-3 bg-white rounded-md min-w-[342px] h-32 text-center max-[493px]:hidden border-2'>
 						{session ? (
 							<>
-								<p className='pt-2'>Signed in as {session?.user?.email}</p> <br />
+								<p className='pt-2'>Signed in as</p>
+								<p className='pt-2'>{session?.user?.email}</p>
+								<br />
 								<button
 									className='w-80 rounded-md p-2 hover:bg-gray-200'
 									onClick={() => signOut()}>
@@ -245,13 +247,13 @@ export default function Header() {
 					</section>
 				</nav>
 			</header>
-			<div className='w-full min-w-80 select-none flex justify-center items-center '>
+			<section className='w-full min-w-80 select-none flex justify-center items-center '>
 				<button
 					title='For you'
 					className='pt-2 mt-6 pb-2 text-nowrap border-b-[3px] rounded-t rounded-b-sm border-black hover:bg-gray-200'>
 					For you
 				</button>
-			</div>
+			</section>
 		</>
 	);
 }
