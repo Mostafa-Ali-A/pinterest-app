@@ -29,8 +29,8 @@ export default function RootLayout({
 				antialiased`}>
 				<Provider>
 					<Header />
-					{children}
 					<SpeedInsights />
+					{children}
 				</Provider>
 			</body>
 		</html>
