@@ -11,18 +11,20 @@ export default function Header() {
 	const db = getFirestore(app);
 	const [open, setOpen] = useState(false);
 
+	const saveUserInfo = async () => {
+		const user = session?.user;
+		if (user) {
+			const userRef = doc(db, 'users', user?.email as string);
+			await setDoc(userRef, {
+				name: user.name,
+				email: user.email,
+				image: user.image,
+			});
+		}
+	};
+
 	useEffect(() => {
-		const saveUserInfo = async () => {
-			const user = session?.user;
-			if (user) {
-				const userRef = doc(db, user.name as string, user.email as string);
-				await setDoc(userRef, {
-					name: user.name,
-					email: user.email,
-					image: user.image,
-				});
-			}
-		};
+		saveUserInfo();
 	}, [session]);
 
 	const toggleBTN = (e: React.MouseEvent<HTMLButtonElement>): void => {
