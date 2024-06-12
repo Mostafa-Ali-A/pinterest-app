@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
-import FirebaseConfig from '../FirebaseConfig';
+import app from '../FirebaseConfig';
 import anonymous from '@/public/anonymous.webp';
 
 export default function Header() {
 	const { data: session } = useSession();
-	const db = getFirestore(FirebaseConfig);
+	const db = getFirestore(app);
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
