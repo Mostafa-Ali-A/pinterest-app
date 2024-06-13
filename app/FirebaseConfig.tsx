@@ -3,12 +3,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: `${process.env.API_KEY}`,
-	authDomain: `${process.env.AUTH_DOMAIN}`,
-	projectId: `${process.env.PROJECT_ID}`,
-	storageBucket: `${process.env.STORAGE_BUCKET}`,
-	messagingSenderId: `${process.env.MESSAGING_SENDER_ID}`,
-	appId: `${process.env.APP_ID}`,
+	apiKey: 'AIzaSyCv5kl4G8i2j8RfP2UxpRAN4JCTt-t3tAg',
+	authDomain: 'mostafa-ali-a.firebaseapp.com',
+	projectId: 'mostafa-ali-a',
+	storageBucket: 'mostafa-ali-a.appspot.com',
+	messagingSenderId: '902598941212',
+	appId: '1:902598941212:web:8097ab417be2f7e9649dd9',
 };
 
 // Initialize Firebase
