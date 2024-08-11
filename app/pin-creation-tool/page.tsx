@@ -51,7 +51,7 @@ export default function page() {
 						fs.mkdirSync('dog_images');
 				}*/
 					// Iterate through rows in the table (skip the header row)
-					$('tr', table).each((index, row) => {
+					$('tr' /*, table*/).each((index, row) => {
 						const columns = $('td, th', row);
 						if (columns.length === 4) {
 							// Extract data from each column
