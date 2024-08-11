@@ -106,7 +106,7 @@ export default function page() {
 			});
 	};
 	const getImageList = async () => {
-		setImages(await ImageApi());
+		setImages((await ImageApi()) as any);
 	};
 
 	useEffect(() => {
